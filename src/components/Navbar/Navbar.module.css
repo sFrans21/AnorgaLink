@@ -1,0 +1,69 @@
+/* src/components/Navbar/Navbar.module.css */
+.navbar {
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem; /* 80px */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  height: 2.5rem; /* 40px */
+  width: 2.5rem; /* 40px */
+  color: #16a34a; /* green-600 */
+}
+
+.logoText {
+  margin-left: 0.75rem; /* 12px */
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.greeting {
+  color: #4b5563; /* gray-600 */
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  background-color: #ef4444; /* red-500 */
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.logoutButton:hover {
+  background-color: #dc2626; /* red-600 */
+}
+
+@media (max-width: 768px) {
+  .greeting {
+    display: none;
+  }
+}
