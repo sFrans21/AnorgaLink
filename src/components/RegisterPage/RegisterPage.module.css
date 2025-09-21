@@ -1,0 +1,44 @@
+/* src/components/RegisterPage/RegisterPage.module.css */
+/* Kita bisa menggunakan kembali style dari LoginPage karena mirip */
+@import url("../LoginPage/LoginPage.module.css");
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Beri sedikit lebih banyak ruang antar input */
+}
+
+.roleLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+}
+
+.radioGroup {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.radioContainer {
+  display: flex;
+  align-items: center;
+}
+
+.radioInput {
+  height: 1rem;
+  width: 1rem;
+  color: #16a34a; /* green-600 */
+  border-color: #9ca3af; /* gray-400 */
+}
+.radioInput:focus {
+  ring: #16a34a;
+}
+
+.radioLabel {
+  margin-left: 0.75rem;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+}
