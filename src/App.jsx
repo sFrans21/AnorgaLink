@@ -216,7 +216,7 @@ const Navbar = ({ setPage }) => {
               />
             </svg>
             <span className="ml-3 text-2xl font-bold text-gray-800">
-              Cinunuk Lestari
+              AnorgaLink
             </span>
           </div>
           {user && (
@@ -563,7 +563,8 @@ const JualSampahPage = () => {
               <option>Kardus/Karton</option>
               <option>Kertas HVS/Buku</option>
               <option>Kaleng Aluminium</option>
-              <option>Besi/Logam Lainnya</option>
+              <option>Besi/Logam</option>
+              <option>Lainnya</option>
             </select>
           </div>
           <div>
@@ -752,7 +753,7 @@ const WasteCard = ({ listing }) => {
     const phone = sellerPhone.startsWith("0")
       ? "62" + sellerPhone.substring(1)
       : sellerPhone;
-    const message = `Halo ${sellerName}, saya tertarik dengan postingan sampah ${wasteType} Anda di Aplikasi Cinunuk Lestari.`;
+    const message = `Halo ${sellerName}, saya tertarik dengan postingan sampah ${wasteType} Anda di Aplikasi AnorgaLink.`;
     window.open(
       `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
       "_blank"
