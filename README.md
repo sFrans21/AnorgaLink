@@ -1,30 +1,36 @@
-AnorgaLink
-Ikhtisar Proyek
-Latar Belakang
+# AnorgaLink
+
+## Ikhtisar Proyek
+
+### Latar Belakang
+
 Aplikasi ini bertujuan untuk mengatasi inefisiensi dalam pengelolaan sampah anorganik. Aplikasi ini menghubungkan warga yang memiliki sampah terpilah (seperti plastik, kardus, dan kaleng) dengan pengepul. Tujuannya adalah untuk menggantikan proses yang tidak terstruktur dengan sistem digital yang lebih terorganisir.
 
-Tujuan
+### Tujuan
+
 Meluncurkan MVP (Minimum Viable Product) fungsional yang bertindak sebagai katalisator transaksi sampah anorganik.
 
-Fitur Fungsional
-Pendaftaran Akun: Pengguna dapat mendaftar sebagai Warga atau Pengepul dengan mengisi nama, nomor WhatsApp, dan kata sandi.
+### Fitur Fungsional
 
-Login & Otentikasi: Pengguna yang terdaftar dapat masuk ke aplikasi. Email pengguna dibuat dari nomor WhatsApp (contoh: 081234567890@cinunuk.app).
+1. Pendaftaran Akun: Pengguna dapat mendaftar sebagai Warga atau Pengepul dengan mengisi nama, nomor WhatsApp, dan kata sandi.
 
-Membuat Postingan Sampah (Warga): Pengguna dengan peran Warga dapat membuat postingan baru, memilih jenis sampah, memasukkan perkiraan berat, dan mengunggah foto opsional.
+2. Login & Otentikasi: Pengguna yang terdaftar dapat masuk ke aplikasi. Email pengguna dibuat dari nomor WhatsApp (contoh: 081234567890@cinunuk.app).
 
-Melihat Daftar Sampah (Pengepul): Pengguna dengan peran Pengepul dapat melihat daftar real-time dari semua postingan sampah yang tersedia.
+3. Membuat Postingan Sampah (Warga): Pengguna dengan peran Warga dapat membuat postingan baru, memilih jenis sampah, memasukkan perkiraan berat, dan mengunggah foto opsional.
 
-Hubungi via WhatsApp: Pengepul dapat mengklik tombol pada setiap postingan untuk menghubungi penjual secara langsung melalui WhatsApp dengan pesan yang sudah diformat.
+4. Melihat Daftar Sampah (Pengepul): Pengguna dengan peran Pengepul dapat melihat daftar real-time dari semua postingan sampah yang tersedia.
 
-Aturan Keamanan Firebase: Aturan keamanan yang ketat diterapkan untuk memastikan pengguna hanya dapat memodifikasi datanya sendiri dan hanya Pengepul yang terautentikasi dapat membaca semua postingan.
+5. Hubungi via WhatsApp: Pengepul dapat mengklik tombol pada setiap postingan untuk menghubungi penjual secara langsung melalui WhatsApp dengan pesan yang sudah diformat.
 
-Teknologi yang Digunakan
-Frontend: Next.js 13+ (App Router, Server Components & Client Components)
+6. Aturan Keamanan Firebase: Aturan keamanan yang ketat diterapkan untuk memastikan pengguna hanya dapat memodifikasi datanya sendiri dan hanya Pengepul yang terautentikasi dapat membaca semua postingan.
 
-UI Framework: Chakra UI
+### Teknologi yang Digunakan
 
-Manajemen Form: React Hook Form
+1. Frontend: Next.js 13+ (App Router, Server Components & Client Components)
+
+2. UI Framework: Chakra UI
+
+3. Manajemen Form: React Hook Form
 
 Backend: Firebase (Firestore, Authentication, Cloud Storage)
 
