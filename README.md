@@ -32,41 +32,41 @@ Meluncurkan MVP (Minimum Viable Product) fungsional yang bertindak sebagai katal
 
 3. Manajemen Form: React Hook Form
 
-Backend: Firebase (Firestore, Authentication, Cloud Storage)
+4. Backend: Firebase (Firestore, Authentication)
 
-Deployment: Netlify
+5. Deployment: Vercel
 
-Panduan Setup
+### Panduan Setup
+
 Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
 
-Clone Repositori:
+1. Clone Repositori:
 
-Bash
-
-git clone [URL_REPOSITORI_ANDA]
+```git clone [URL_REPOSITORI_ANDA]
 cd anorgalink
-Instal Dependensi:
+```
 
-Bash
+2. Instal Dependensi:
 
-npm install
-Konfigurasi Firebase:
-Anda perlu membuat file .env.local di direktori root dan menambahkan kredensial Firebase Anda.
+```npm install
 
-Cuplikan kode
+```
 
-VITE_FIREBASE_API_KEY="..."
+3. Konfigurasi Firebase:
+   Anda perlu membuat file .env.local di direktori root dan menambahkan kredensial Firebase Anda.
+
+```VITE_FIREBASE_API_KEY="..."
 VITE_FIREBASE_AUTH_DOMAIN="..."
 VITE_FIREBASE_PROJECT_ID="..."
 VITE_FIREBASE_STORAGE_BUCKET="..."
 VITE_FIREBASE_MESSAGING_SENDER_ID="..."
 VITE_FIREBASE_APP_ID="..."
-Jalankan Aplikasi:
+```
 
-Bash
+4. Jalankan Aplikasi:
+   npm run dev
+   Aplikasi akan berjalan di http://localhost:3000.
 
-npm run dev
-Aplikasi akan berjalan di http://localhost:3000.
+### Penjelasan Dukungan AI
 
-Penjelasan Dukungan AI
 Proses perencanaan dan arsitektur proyek ini dibantu oleh AI (Gemini). AI digunakan untuk merancang struktur data JSON yang optimal untuk Firestore, memastikan desain database yang efisien dan mencegah masalah performa di masa depan. Dengan bertindak sebagai "arsitek sistem junior", AI membantu tim developer menghemat waktu riset dan menerapkan praktik terbaik sejak awal.
