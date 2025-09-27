@@ -65,8 +65,8 @@ VITE_FIREBASE_APP_ID="..."
 
 4. Jalankan Aplikasi:
    npm run dev
-   Aplikasi akan berjalan di http://localhost:3000.
+   Aplikasi akan berjalan di localhost anda.
 
 ### Penjelasan Dukungan AI
 
-Proses perencanaan dan arsitektur proyek ini dibantu oleh AI (Gemini). AI digunakan untuk merancang struktur data JSON yang optimal untuk Firestore, memastikan desain database yang efisien dan mencegah masalah performa di masa depan. Dengan bertindak sebagai "arsitek sistem junior", AI membantu tim developer menghemat waktu riset dan menerapkan praktik terbaik sejak awal.
+Proses perencanaan dan arsitektur proyek ini dibantu oleh IBM Granite. IBM Granite digunakan untuk merancang struktur data JSON yang optimal untuk Firestore, memastikan desain database yang efisien dan mencegah masalah performa di masa depan. Dengan bertindak sebagai "arsitek sistem junior", AI membantu developer menghemat waktu riset dan menerapkan praktik terbaik sejak awal.
