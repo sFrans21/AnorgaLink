@@ -19,21 +19,34 @@ import {
   onSnapshot,
   serverTimestamp,
 } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+// import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // --- Firebase Configuration & Initialization ---
 // PENTING: Ganti nilai-nilai placeholder di bawah ini dengan kredensial dari proyek Firebase Anda!
 // Anda bisa mendapatkannya dari Project Settings > General di Firebase Console.
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBmaSP5ZirgAzFYAqWLTaH_PQxEmS6yt4E",
+//   authDomain: "anorganik.firebaseapp.com",
+//   projectId: "anorgalink",
+//   storageBucket: "anorgalink.firebasestorage.app",
+//   messagingSenderId: "104981036064",
+//   appId: "1:104981036064:web:d7b305bf0c2d23d9c25045",
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBmaSP5ZirgAzFYAqWLTaH_PQxEmS6yt4E",
-  authDomain: "anorganik.firebaseapp.com",
-  projectId: "anorgalink",
-  storageBucket: "anorgalink.firebasestorage.app",
-  messagingSenderId: "104981036064",
-  appId: "1:104981036064:web:d7b305bf0c2d23d9c25045",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-let auth, db, storage;
+// Konfigurasi Cloudinary
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
+let auth, db;
 let firebaseInitialized = false;
 
 // A function to show a prominent error on the screen if config is missing
@@ -73,7 +86,6 @@ if (
     const app = initializeApp(firebaseConfig);
     auth = getAuth(app);
     db = getFirestore(app);
-    storage = getStorage(app);
     firebaseInitialized = true;
   } catch (error) {
     console.error("Firebase Initialization Failed:", error.message);
@@ -507,12 +519,23 @@ const JualSampahPage = () => {
     try {
       let imageUrl = null;
       if (image) {
-        const storageRef = ref(
-          storage,
-          `waste_images/${auth.currentUser.uid}_${Date.now()}`
-        );
-        await uploadBytes(storageRef, image);
-        imageUrl = await getDownloadURL(storageRef);
+        const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
+        const formData = new FormData();
+        formData.append("file", image);
+        formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+        // Melakukan unggahan ke Cloudinary (mengatasi CORS)
+        const response = await fetch(CLOUDINARY_URL, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Gagal mengunggah gambar ke Cloudinary.");
+        }
+
+        const result = await response.json();
+        imageUrl = result.secure_url; // URL gambar Cloudinary yang siap digunakan
       }
 
       await addDoc(collection(db, "waste_listings"), {
